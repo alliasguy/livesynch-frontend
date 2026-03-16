@@ -62,7 +62,7 @@ function App() {
   }, [])
 
 
-  const route = 'https://live-synch-backend.vercel.app'
+  const route = 'https://livesynch-backend.vercel.app'
   // const route = 'http://localhost:5000'
 
   return (
