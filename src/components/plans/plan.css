@@ -1,0 +1,273 @@
+.plan-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: relative;
+}
+.plan-card-container{
+  width: 90%;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.pack-container {
+  position: relative;
+  display: flex;
+  min-width: 25%;
+  flex-direction: column;
+  padding: 1.6rem;
+  color: #fff;
+  border: 1px solid #505050;
+}
+.pack-container:hover{
+  border: 1px solid #8f8f8f;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.pack-header {
+  position: relative;
+  margin: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 0;
+  border-bottom: 1px solid #3d3d3d;
+  background: transparent;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.pack-header h3{
+  background: #91770A;
+    background: linear-gradient(to right, #91770A 0%, #E6B80B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+.pack-header h2{
+  text-align: left;
+  margin: 20px 0px;
+  font-size: 2.5rem;
+}
+.lot-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.lot-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lot-container p{
+  color: rgb(185, 185, 185);
+  width: 90%;
+  padding: 10px;
+  font-size: .9rem;
+  text-align: left;
+}
+.lot-line{
+  height: 2px;
+  width: 10%;
+  background-color: rgb(116, 116, 116);
+}
+.title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  color: var(--color-variant)
+}
+
+.price-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--secondary-color);
+}
+
+.price-container span:first-child {
+  margin-top: 10px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.price-container span:last-child {
+  align-self: flex-end;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-color);
+}
+
+.list span {
+  border-radius: 50%;
+  border: 1px solid rgba(169, 169, 169, 0.24);
+  background-color: rgba(169,
+    169,
+    169,
+    0.24);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list span svg {
+  height: 12px;
+  width: 12px;
+  color: var(--color-variant);
+}
+
+.list p {
+  display: block;
+  font-family: sans-serif;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  padding: 0;
+  color: white;
+}
+
+.buttons-container button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  text-transform: capitalize;
+  color: var(--mild-color);
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Poppins';
+  background-color: #91770A;
+}
+.buttons-container button:hover{
+  background-color: #91770A;
+  color: white;
+  transition: .1s ease-in-out all;
+  cursor: pointer;
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+.plan-card-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.plan-card-btn {
+  --primary-color: #91770A;
+  --hovered-color: #ddd;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.plan-card-btn p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.plan-card-btn::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.plan-card-btn p::before {
+  position: absolute;
+    box-sizing: border-box;
+  content: "Subscribe";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.plan-card-btn:hover::after {
+  width: 100%;
+}
+
+.plan-card-btn:hover p::before {
+  width: 100%;
+}
+
+.plan-card-btn:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+.plan-card-btn svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+  @media (max-width: 990px) and (min-width: 768px){
+    .plan-section{
+       background-repeat: no-repeat;
+    }
+    .pack-container {
+      width: 48%;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .my-plan-container{
+      width: 100%;
+      padding: 40px 0px;
+    }
+    .pack-container{
+      width:100% ;
+    }
+    .container{
+      width: 100%;
+    }
+    .plan-section{
+      background-repeat: no-repeat;
+   }
+  }

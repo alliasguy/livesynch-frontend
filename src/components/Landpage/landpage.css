@@ -1,0 +1,421 @@
+/* landpage.css - V3 Green Energy Theme */
+
+.landpage {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000200;
+  /* Deepest Green/Black */
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Modern Grid Background */
+  background-image:
+    linear-gradient(rgba(255, 193, 7, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 193, 7, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(255, 193, 7, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+}
+
+/* Gold Rays Effect - Updated from Aurora flow */
+.background-effects {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 60%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(255, 193, 7, 0.2) 0%, rgba(198, 149, 0, 0.1) 40%, transparent 70%);
+  filter: blur(80px);
+  opacity: 0.8;
+}
+
+/* Centered Content */
+.landpage-hero-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 180px;
+  /* Extra padding bottom for the strip overlap if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.hero-centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 900px;
+  z-index: 5;
+}
+
+.hero-headline {
+  font-family: 'Inter', sans-serif;
+  /* Ensuring clean modern font */
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+}
+
+.hero-highlight-text {
+  display: block;
+  /* Make it wrap naturally or block if needed, assuming block for BR effect */
+  background: linear-gradient(90deg, #fff 0%, #FFC107 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subheadline {
+  color: #94a3b8;
+  /* Light slate text */
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.btn-primary-green {
+  padding: 16px 48px;
+  background: #FFC107;
+  /* Bright Gold */
+  color: #000000;
+  border-radius: 50px;
+  /* Pill shape */
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+}
+
+.btn-primary-green:hover {
+  background: #E0A800;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+}
+
+/* Stats Bar */
+.stats-bar-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 5%;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Raw Spread Section */
+.raw-spread-section {
+  padding: 100px 5%;
+  background-color: #020402;
+  /* Deep dark bg */
+  background-image: radial-gradient(circle at 10% 50%, rgba(255, 193, 7, 0.05) 0%, transparent 40%);
+}
+
+.raw-spread-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Visuals Column (Trader Cards) */
+.raw-visuals-col {
+  position: relative;
+  z-index: 10;
+}
+
+.trader-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+}
+
+.trader-card {
+  background: #0f0f0f;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.trader-card.glass-effect {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255, 193, 7, 0.2);
+  position: absolute;
+  top: 40px;
+  right: -40px;
+  z-index: -1;
+  transform: scale(0.95);
+}
+
+.trader-card:hover {
+  transform: translateY(-5px);
+  border-color: #FFC107;
+}
+
+.trader-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trader-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #27272a;
+  border: 2px solid #FFC107;
+}
+
+.av-1 {
+  background-image: url('https://i.pravatar.cc/150?u=1');
+  background-size: cover;
+}
+
+.av-2 {
+  background-image: url('https://i.pravatar.cc/150?u=5');
+  background-size: cover;
+}
+
+.trader-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trader-info .name {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.trader-info .strategy {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.rank {
+  background: rgba(255, 193, 7, 0.1);
+  color: #FFC107;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.trader-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid #27272a;
+  border-bottom: 1px solid #27272a;
+}
+
+.t-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.t-stat .label {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.t-stat .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.t-stat .value.positive {
+  color: #FFC107;
+}
+
+.t-stat .value.low {
+  color: #3b82f6;
+}
+
+/* Blue for low risk */
+.t-stat .value.medium {
+  color: #eab308;
+}
+
+/* Yellow */
+
+.trader-chart-mini {
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.trader-chart-mini .bar {
+  flex: 1;
+  background: #FFC107;
+  border-radius: 2px 2px 0 0;
+  opacity: 0.6;
+}
+
+.trader-chart-mini .bar:last-child {
+  opacity: 1;
+}
+
+.btn-copy-card {
+  width: 100%;
+  padding: 12px;
+  background: #FFC107;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-copy-card:hover {
+  background: #E0A800;
+}
+
+/* End Trader Cards */
+
+/* Content Column */
+.raw-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.section-headline {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.raw-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+  .landpage-hero-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .stats-bar-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .raw-spread-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .stats-bar-section {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .raw-spread-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .raw-content-col {
+    align-items: center;
+    order: -1;
+    /* Put content above visuals on mobile? Or keep below? Standard is usually content first if text heavy. Let's keep existing order or swap. */
+  }
+
+  .raw-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .trader-card.glass-effect {
+    position: static;
+    transform: none;
+    margin-top: 16px;
+  }
+}

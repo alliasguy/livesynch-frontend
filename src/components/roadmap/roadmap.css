@@ -1,0 +1,105 @@
+.roadmapSection {
+    background: #000000;
+    padding: 40px 0 100px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.rodmapWrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.videoframe-text-container h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+}
+
+.roadmapContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 32px;
+}
+
+.roadmapCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--slate-800);
+    border-radius: 24px;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.roadmapCard:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--emerald-500);
+}
+
+.roadmapCounter {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #000000;
+    border: 2px solid var(--emerald-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--emerald-400);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.roadmapCardText h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+.roadmapCardText p {
+    color: var(--slate-400);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.roadmapSvgContainer {
+    color: var(--slate-700);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .roadmapContainer {
+        flex-direction: column;
+    }
+
+    .roadmapSvgContainer {
+        transform: rotate(90deg);
+    }
+
+    .roadmapCard {
+        width: 100%;
+    }
+}

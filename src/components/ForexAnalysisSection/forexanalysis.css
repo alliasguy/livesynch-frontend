@@ -1,0 +1,69 @@
+.forex-analysis-section {
+    width: 100%;
+    padding: 100px 0;
+    background: #000000;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.glass-panel-vertical {
+    background: #0a0a0a;
+    border: 1px solid #1f2937;
+    /* Dark Slate Border */
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel-vertical:hover {
+    background: #0f172a;
+    border-color: #22c55e;
+    /* Neon Green on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -5px rgba(34, 197, 94, 0.1);
+}
+
+.analysis-card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.analysis-card-header p {
+    color: #94a3b8;
+    /* Slate 400 */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.analysis-widget-wrapper {
+    height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000000;
+    border: 1px solid #1f2937;
+}
+
+@media (max-width: 990px) {
+    .forex-analysis-section {
+        padding: 60px 10px;
+        /* Enforce 10px padding */
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-panel-vertical {
+        height: auto;
+    }
+}
