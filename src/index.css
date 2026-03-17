@@ -396,7 +396,7 @@ button {
 }
 
 .signup-page {
-  padding: 50px 0px;
+  padding: 40px 0px;
   background: #000000;
   background: radial-gradient(circle farthest-corner at center center, #FFC107 0%, #000000 29%);
   background-size: cover;
@@ -405,6 +405,8 @@ button {
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .login-form-container {
@@ -452,8 +454,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0px;
-  min-height: 100vh;
+  padding: 20px 0px;
+  height: 100%;
 }
 
 .logintext-container h1 {
