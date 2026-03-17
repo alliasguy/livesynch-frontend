@@ -23,6 +23,7 @@ import Aboutpage from './pages/Aboutpage';
 import Faq from './pages/Faq';
 import Terms from './pages/Terms';
 import Risk from './pages/Risk';
+import Reviews from './pages/Reviews';
 
 import Policy from './pages/Policy';
 import './App.css'
@@ -110,6 +111,7 @@ function App() {
               <Route path='/privacy' element={<Policy />} />
               <Route path='/terms' element={<Terms />} />
               <Route path='/risk' element={<Risk />} />
+              <Route path='/reviews' element={<Reviews />} />
               <Route path='/forex' element={<Forex />} />
               <Route path='/futures' element={<Futures />} />
               <Route path='/indices' element={<Indices />} />

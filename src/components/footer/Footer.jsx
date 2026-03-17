@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className='footer'>
             <div className="footer-content">
                 <div className="footer-brand">
-                    <h2>Elite<span className="highlight-text">Synch</span></h2>
+                    <h2>Live-<span className="highlight-text">Synch</span></h2>
                     <p className="footer-text">
                         The premier copytrading ecosystem connecting you with verified master traders worldwide.
                         Scale your wealth with precision and automate your growth with confidence.

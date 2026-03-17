@@ -2,6 +2,7 @@ import React from 'react'
 import './review.css'
 import { ImQuotesLeft } from 'react-icons/im'
 import { AiFillStar } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 const Review = () => {
 
@@ -70,6 +71,12 @@ const Review = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="view-all-reviews" style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }} data-aos="fade-up" data-aos-delay="300">
+          <Link to="/reviews" className="btn-primary-green" style={{ padding: '14px 32px', borderRadius: '50px', fontWeight: 'bold', fontSize: '1.1rem', textDecoration: 'none', color: '#000' }}>
+            View All Reviews
+          </Link>
         </div>
       </div>
     </section>
