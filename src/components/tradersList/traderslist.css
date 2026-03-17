@@ -428,6 +428,12 @@
         text-align: center;
     }
 
+    .spreads-text-col {
+        width: 95%;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
     .spreads-list li {
         justify-content: center;
         text-align: left;
