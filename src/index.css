@@ -1491,8 +1491,8 @@ button {
   .forex-page-wrapper, .trading-view-forex-section, .about-container, .cardSectionWrapper, .strength-container, .contact-wrapper, .mirror-modal-container, .copy-trade-wrapper, .section-container, .faq-wrapper, .faq-container, .footer-content, .footer-bottom, .logo-container, .mt5-container, .platform-mockup, .plan-card-container, .rodmapWrapper, .forex-card, .updated-crypto-img, .updated-img-cont, .dashboard-links, .drop-down, .search-input, .trader-profile-container, .trader-profile-card, .comparison-container, .home-price-chart, .videoframe-text-container, .bonds-page-wrapper, .commodities-page-wrapper, .mirror-trade-plan-section, .options-page-wrapper, .bitcoin-card, .login-logo, .realtimechart {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
     box-sizing: border-box !important;
   }
 }

@@ -225,11 +225,12 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 /* Phone Mockup */
 .phone-mockup {
-    width: 280px;
+    width: 90%;
     height: 520px;
     background: #222;
     border-radius: 40px;
@@ -433,9 +434,9 @@
     }
 
     .phone-mockup {
-        width: 100%;
+        width: 90%;
         /* Resize phone for mobile */
-        max-width: 280px;
+        max-width: 100%;
     }
 
     .floating-spread-widget {
