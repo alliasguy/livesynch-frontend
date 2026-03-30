@@ -72,9 +72,22 @@ const Userdashboardhomepage = ({ route }) => {
 
   useEffect(() => {
     // Run this only when both traders and userData.trader are ready
-    if (userData?.trades.length > 0 && userData) {
-
-      const dailytrades = userData.trades.filter(trade => trade.date === today)
+    if (userData?.trades?.length > 0 && userData) {
+      const todayDate = new Date();
+      
+      const dailytrades = userData.trades.filter(trade => {
+        const tradeDate = new Date(trade.date);
+        
+        // If parsing succeeds, compare dates accurately
+        if (!isNaN(tradeDate)) {
+          return tradeDate.getDate() === todayDate.getDate() &&
+                 tradeDate.getMonth() === todayDate.getMonth() &&
+                 tradeDate.getFullYear() === todayDate.getFullYear();
+        }
+        
+        // Fallback for unexpected date formats
+        return trade.date === today;
+      });
 
       console.log("daily trades:", dailytrades);
       setDailyTrades(dailytrades);
