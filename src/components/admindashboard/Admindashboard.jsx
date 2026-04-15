@@ -97,7 +97,7 @@ const Admindashboard = ({ route }) => {
       })
       const data = {
         service_id: 'service_v81s9q6',
-        template_id: 'GZMEJ032T4bAvYE-D',
+        template_id: 'template_kat7an6',
         user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${res.name}`,
@@ -120,7 +120,7 @@ const Admindashboard = ({ route }) => {
       else {
         const uplineData = {
           service_id: 'service_v81s9q6',
-          template_id: 'GZMEJ032T4bAvYE-D',
+          template_id: 'template_kat7an6',
           user_id: 'GZMEJ032T4bAvYE-D',
           template_params: {
             'name': `${res.uplineName}`,
@@ -183,7 +183,7 @@ const Admindashboard = ({ route }) => {
       })
       const data = {
         service_id: 'service_v81s9q6',
-        template_id: 'GZMEJ032T4bAvYE-D',
+        template_id: 'template_kat7an6',
         user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${res.name}`,
@@ -233,7 +233,7 @@ const Admindashboard = ({ route }) => {
     if (awaitedData.amount !== undefined) {
       const data = {
         service_id: 'service_v81s9q6',
-        template_id: 'GZMEJ032T4bAvYE-D',
+        template_id: 'template_kat7an6',
         user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${name}`,
@@ -654,7 +654,7 @@ const Admindashboard = ({ route }) => {
 
           const emailData = {
             service_id: 'service_v81s9q6',
-            template_id: 'GZMEJ032T4bAvYE-D',
+            template_id: 'template_kat7an6',
             user_id: 'GZMEJ032T4bAvYE-D',
             template_params: {
               'name': `${user.firstname}`,

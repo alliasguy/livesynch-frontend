@@ -79,7 +79,7 @@ const Deposit = ({ amount, active, close, route }) => {
 
             const data = {
                 service_id: 'service_v81s9q6',
-                template_id: 'GZMEJ032T4bAvYE-D',
+                template_id: 'template_kat7an6',
                 user_id: 'GZMEJ032T4bAvYE-D',
                 template_params: {
                     'name': `${res.name}`,
@@ -91,7 +91,7 @@ const Deposit = ({ amount, active, close, route }) => {
             };
             const adminData = {
                 service_id: 'service_v81s9q6',
-                template_id: 'GZMEJ032T4bAvYE-D',
+                template_id: 'template_kat7an6',
                 user_id: 'GZMEJ032T4bAvYE-D',
                 template_params: {
                     'name': `Bro`,
