@@ -96,9 +96,9 @@ const Admindashboard = ({ route }) => {
         title: `Acoount credited with  $${res.funded} USD`
       })
       const data = {
-        service_id: 'service_hyldfcr',
-        template_id: 'template_f5cd92h',
-        user_id: '4JUt2Qxatj7_YsTxw',
+        service_id: 'service_v81s9q6',
+        template_id: 'GZMEJ032T4bAvYE-D',
+        user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${res.name}`,
           'email': `${res.email}`,
@@ -119,9 +119,9 @@ const Admindashboard = ({ route }) => {
       }
       else {
         const uplineData = {
-          service_id: 'service_hyldfcr',
-          template_id: 'template_f5cd92h',
-          user_id: '4JUt2Qxatj7_YsTxw',
+          service_id: 'service_v81s9q6',
+          template_id: 'GZMEJ032T4bAvYE-D',
+          user_id: 'GZMEJ032T4bAvYE-D',
           template_params: {
             'name': `${res.uplineName}`,
             'email': `${res.uplineEmail}`,
@@ -182,9 +182,9 @@ const Admindashboard = ({ route }) => {
         title: `Acoount debited with  $${res.funded} USD`
       })
       const data = {
-        service_id: 'service_hyldfcr',
-        template_id: 'template_f5cd92h',
-        user_id: '4JUt2Qxatj7_YsTxw',
+        service_id: 'service_v81s9q6',
+        template_id: 'GZMEJ032T4bAvYE-D',
+        user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${res.name}`,
           'email': `${res.email}`,
@@ -232,9 +232,9 @@ const Admindashboard = ({ route }) => {
 
     if (awaitedData.amount !== undefined) {
       const data = {
-        service_id: 'service_hyldfcr',
-        template_id: 'template_f5cd92h',
-        user_id: '4JUt2Qxatj7_YsTxw',
+        service_id: 'service_v81s9q6',
+        template_id: 'GZMEJ032T4bAvYE-D',
+        user_id: 'GZMEJ032T4bAvYE-D',
         template_params: {
           'name': `${name}`,
           'email': `${activeEmail}`,
@@ -653,9 +653,9 @@ const Admindashboard = ({ route }) => {
           Toast.fire({ icon: 'success', title: 'KYC Approved Successfully' });
 
           const emailData = {
-            service_id: 'service_hyldfcr',
-            template_id: 'template_f5cd92h',
-            user_id: '4JUt2Qxatj7_YsTxw',
+            service_id: 'service_v81s9q6',
+            template_id: 'GZMEJ032T4bAvYE-D',
+            user_id: 'GZMEJ032T4bAvYE-D',
             template_params: {
               'name': `${user.firstname}`,
               'email': `${user.email}`,

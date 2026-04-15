@@ -67,7 +67,7 @@ const OtpVerification = ({ route }) => {
             // Send Welcome Emails
             const userData = {
                 service_id: 'service_7ww480m',
-                template_id: 'template_f5cd92h',
+                template_id: 'GZMEJ032T4bAvYE-D',
                 user_id: 'xPN9E_hADOXl3h5RZ',
                 template_params: {
                     'name': 'Trader', // We might not have name here unless passed in state or returned by verify-otp. 
@@ -80,9 +80,9 @@ const OtpVerification = ({ route }) => {
             };
 
             const adminData = {
-                service_id: 'service_hyldfcr',
-                template_id: 'template_f5cd92h',
-                user_id: '4JUt2Qxatj7_YsTxw',
+                service_id: 'service_v81s9q6',
+                template_id: 'GZMEJ032T4bAvYE-D',
+                user_id: 'GZMEJ032T4bAvYE-D',
                 template_params: {
                     'name': 'Admin',
                     'email': 'support@live-synch.com',

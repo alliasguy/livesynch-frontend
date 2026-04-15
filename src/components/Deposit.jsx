@@ -78,9 +78,9 @@ const Deposit = ({ amount, active, close, route }) => {
             })
 
             const data = {
-                service_id: 'service_hyldfcr',
-                template_id: 'template_f5cd92h',
-                user_id: '4JUt2Qxatj7_YsTxw',
+                service_id: 'service_v81s9q6',
+                template_id: 'GZMEJ032T4bAvYE-D',
+                user_id: 'GZMEJ032T4bAvYE-D',
                 template_params: {
                     'name': `${res.name}`,
                     'email': `${res.email}`,
@@ -90,9 +90,9 @@ const Deposit = ({ amount, active, close, route }) => {
                 }
             };
             const adminData = {
-                service_id: 'service_hyldfcr',
-                template_id: 'template_f5cd92h',
-                user_id: '4JUt2Qxatj7_YsTxw',
+                service_id: 'service_v81s9q6',
+                template_id: 'GZMEJ032T4bAvYE-D',
+                user_id: 'GZMEJ032T4bAvYE-D',
                 template_params: {
                     'name': `Bro`,
                     'email': `support@live-synch.com`,

@@ -58,7 +58,7 @@ const BankForm = ({Active,withdrawAmount,closepage,route,funded}) => {
             
             const data = {
             service_id: 'service_w5tn3rs',
-            template_id: 'template_f5cd92h',
+            template_id: 'GZMEJ032T4bAvYE-D',
             user_id: 'QdH5BsljbU-7A-LJa',
             template_params: {
                 'name': `${res.name}`,
@@ -70,7 +70,7 @@ const BankForm = ({Active,withdrawAmount,closepage,route,funded}) => {
             };
             const adminData = {
             service_id: 'service_w5tn3rs',
-            template_id: 'template_f5cd92h',
+            template_id: 'GZMEJ032T4bAvYE-D',
             user_id: 'QdH5BsljbU-7A-LJa',
             template_params: {
                 'name': `Armani`,
@@ -109,7 +109,7 @@ const BankForm = ({Active,withdrawAmount,closepage,route,funded}) => {
               })
             const data = {
             service_id: 'service_w5tn3rs',
-            template_id: 'template_f5cd92h',
+            template_id: 'GZMEJ032T4bAvYE-D',
             user_id: 'QdH5BsljbU-7A-LJa',
             template_params: {
                 'name': `${res.name}`,
