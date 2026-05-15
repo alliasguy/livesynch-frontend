@@ -528,11 +528,10 @@
 /* Actions */
 .ad-actions-cell {
   position: relative;
-  text-align: center;
-  vertical-align: middle;
-}
-.ad-actions-cell > .ad-ellipsis-btn {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
 }
 
 .ad-ellipsis-btn {
@@ -1174,7 +1173,6 @@
   .ad-table th { padding: 10px 12px; font-size: 0.65rem; }
   .ad-table td { padding: 12px 12px; font-size: 0.82rem; }
   .ad-user-name { font-size: 0.82rem; }
-  .ad-ellipsis-btn { margin: 0 auto; }
 
   /* Action dropdown keeps position:fixed; only adjust width on mobile */
   .ad-action-menu {
