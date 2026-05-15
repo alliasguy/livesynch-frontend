@@ -456,6 +456,7 @@ const Admindashboard = ({ route }) => {
   const [copyTraders, setCopyTraders] = useState([])
   const [individualAllocations, setIndividualAllocations] = useState({})
   const [activeActionMenu, setActiveActionMenu] = useState(null)
+  const [menuPos, setMenuPos] = useState({ top: 0, right: 0, bottom: 'auto' })
   const [showUserDetailsModal, setShowUserDetailsModal] = useState(false)
   const [selectedUser, setSelectedUser] = useState(null)
   const [bulkAmount, setBulkAmount] = useState('')
@@ -659,7 +660,6 @@ const Admindashboard = ({ route }) => {
 
                   {users && users.length > 0 ? (
                     <div className="ad-table-wrap">
-                      <div className="ad-table-scroll">
                         <table className="ad-table">
                           <thead>
                             <tr>
@@ -699,13 +699,19 @@ const Admindashboard = ({ route }) => {
                                     className="ad-ellipsis-btn"
                                     onClick={(e) => {
                                       e.stopPropagation()
+                                      const rect = e.currentTarget.getBoundingClientRect()
+                                      const spaceBelow = window.innerHeight - rect.bottom
+                                      setMenuPos(spaceBelow > 300
+                                        ? { top: rect.bottom + 4, bottom: 'auto', right: window.innerWidth - rect.right }
+                                        : { top: 'auto', bottom: window.innerHeight - rect.top + 4, right: window.innerWidth - rect.right }
+                                      )
                                       setActiveActionMenu(activeActionMenu === refer.email ? null : refer.email)
                                     }}
                                   >
                                     <FaEllipsisH />
                                   </button>
                                   {activeActionMenu === refer.email && (
-                                    <div className="ad-action-menu">
+                                    <div className="ad-action-menu" style={{ top: menuPos.top, bottom: menuPos.bottom, right: menuPos.right }}>
                                       <button onClick={() => { setSelectedUser(refer); setShowUserDetailsModal(true); setActiveActionMenu(null) }}>
                                         View Details
                                       </button>
@@ -744,7 +750,6 @@ const Admindashboard = ({ route }) => {
                             ))}
                           </tbody>
                         </table>
-                      </div>
                     </div>
                   ) : (
                     <div className="ad-empty">
