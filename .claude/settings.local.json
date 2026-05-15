@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e \"require\\('./src/components/admindashboard/Admindashboard.jsx'\\)\")"
+      "Bash(node -e \"require\\('./src/components/admindashboard/Admindashboard.jsx'\\)\")",
+      "Bash(node_modules/.bin/react-scripts build *)"
     ]
   }
 }

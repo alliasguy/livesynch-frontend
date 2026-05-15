@@ -456,12 +456,14 @@ const Admindashboard = ({ route }) => {
   const [copyTraders, setCopyTraders] = useState([])
   const [individualAllocations, setIndividualAllocations] = useState({})
   const [activeActionMenu, setActiveActionMenu] = useState(null)
-  const [menuPos, setMenuPos] = useState({ top: 0, right: 0, bottom: 'auto' })
+  const [activeMenuUser, setActiveMenuUser] = useState(null)
+  const [menuPos, setMenuPos] = useState({ top: 'auto', bottom: 'auto', right: 0 })
   const [showUserDetailsModal, setShowUserDetailsModal] = useState(false)
   const [selectedUser, setSelectedUser] = useState(null)
   const [bulkAmount, setBulkAmount] = useState('')
   const [bulkType, setBulkType] = useState('profit')
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [lastRefresh, setLastRefresh] = useState(new Date())
 
   useEffect(() => {
@@ -548,48 +550,68 @@ const Admindashboard = ({ route }) => {
           )}
 
           {/* ──────────── SIDEBAR ──────────── */}
-          <aside className={`ad-sidebar${sidebarOpen ? ' open' : ''}`}>
+          <aside className={`ad-sidebar${sidebarOpen ? ' open' : ''}${sidebarCollapsed ? ' collapsed' : ''}`}>
+
+            {/* Brand */}
             <div className="ad-sidebar-header">
-              <img src="/livesynchlogo3.png" alt="Live-Synch" className="ad-sidebar-logo" />
-              <span className="ad-version-tag">v1.0</span>
+              {!sidebarCollapsed && (
+                <div className="ad-brand">
+                  <img src="/livesynchlogo3.png" alt="Live-Synch" className="ad-sidebar-logo" />
+                  <span className="ad-version-tag">v1.0</span>
+                </div>
+              )}
+              <button className="ad-collapse-btn" onClick={() => setSidebarCollapsed(!sidebarCollapsed)} title="Toggle sidebar">
+                {sidebarCollapsed ? '›' : '‹'}
+              </button>
             </div>
 
+            {/* Nav */}
             <nav className="ad-nav">
-              <button className={`ad-nav-item${showUsers ? ' active' : ''}`} onClick={openUsers}>
+              {!sidebarCollapsed && <span className="ad-nav-label">Navigation</span>}
+
+              <button className={`ad-nav-item${showUsers ? ' active' : ''}`} onClick={openUsers} title="Users">
                 <FiUsers className="ad-nav-icon" />
-                <span>Users</span>
-                {users && users.length > 0 && (
+                {!sidebarCollapsed && <span>Users</span>}
+                {!sidebarCollapsed && users && users.length > 0 && (
                   <span className="ad-nav-badge">{users.length}</span>
                 )}
               </button>
-              <button className={`ad-nav-item${showCreateTrader ? ' active' : ''}`} onClick={openCreateTrader}>
+
+              <button className={`ad-nav-item${showCreateTrader ? ' active' : ''}`} onClick={openCreateTrader} title="Create Trader">
                 <MdAddchart className="ad-nav-icon" />
-                <span>Create Trader</span>
+                {!sidebarCollapsed && <span>Create Trader</span>}
               </button>
-              <button className={`ad-nav-item${showTraderLogs ? ' active' : ''}`} onClick={openTraderLogs}>
+
+              <button className={`ad-nav-item${showTraderLogs ? ' active' : ''}`} onClick={openTraderLogs} title="Trader Logs">
                 <FaRegChartBar className="ad-nav-icon" />
-                <span>Trader Logs</span>
-                {traders && traders.length > 0 && (
+                {!sidebarCollapsed && <span>Trader Logs</span>}
+                {!sidebarCollapsed && traders && traders.length > 0 && (
                   <span className="ad-nav-badge">{traders.length}</span>
                 )}
               </button>
             </nav>
 
+            {/* Footer */}
             <div className="ad-sidebar-footer">
-              <Link to="/dashboard" className="ad-nav-item footer-link">
+              {!sidebarCollapsed && <span className="ad-nav-label">Account</span>}
+
+              <Link to="/dashboard" className="ad-nav-item footer-link" title="User Dashboard">
                 <RxDashboard className="ad-nav-icon" />
-                <span>User Dashboard</span>
+                {!sidebarCollapsed && <span>User Dashboard</span>}
               </Link>
-              <button className="ad-nav-item ad-nav-danger" onClick={logout}>
+
+              <button className="ad-nav-item ad-nav-danger" onClick={logout} title="Sign Out">
                 <FiLogOut className="ad-nav-icon" />
-                <span>Sign Out</span>
+                {!sidebarCollapsed && <span>Sign Out</span>}
               </button>
             </div>
 
+            {/* Status strip */}
             <div className="ad-status-strip">
               <span className="ad-pulse-dot" />
-              <span>Admin Mode Active</span>
+              {!sidebarCollapsed && <span>Admin Mode Active</span>}
             </div>
+
           </aside>
 
           {/* ──────────── MAIN ──────────── */}
@@ -660,6 +682,8 @@ const Admindashboard = ({ route }) => {
 
                   {users && users.length > 0 ? (
                     <div className="ad-table-wrap">
+                      {/* scroll wrapper: only the table scrolls horizontally */}
+                      <div className="ad-table-scroll">
                         <table className="ad-table">
                           <thead>
                             <tr>
@@ -699,57 +723,66 @@ const Admindashboard = ({ route }) => {
                                     className="ad-ellipsis-btn"
                                     onClick={(e) => {
                                       e.stopPropagation()
-                                      const rect = e.currentTarget.getBoundingClientRect()
-                                      const spaceBelow = window.innerHeight - rect.bottom
-                                      setMenuPos(spaceBelow > 300
-                                        ? { top: rect.bottom + 4, bottom: 'auto', right: window.innerWidth - rect.right }
-                                        : { top: 'auto', bottom: window.innerHeight - rect.top + 4, right: window.innerWidth - rect.right }
+                                      const wrap = e.currentTarget.closest('.ad-table-wrap')
+                                      const wrapRect = wrap.getBoundingClientRect()
+                                      const btnRect = e.currentTarget.getBoundingClientRect()
+                                      const spaceBelow = wrapRect.bottom - btnRect.bottom
+                                      setMenuPos(spaceBelow > 280
+                                        ? { top: btnRect.bottom - wrapRect.top + 4, bottom: 'auto', right: wrapRect.right - btnRect.right }
+                                        : { top: 'auto', bottom: wrapRect.bottom - btnRect.top + 4, right: wrapRect.right - btnRect.right }
                                       )
+                                      setActiveMenuUser(refer)
                                       setActiveActionMenu(activeActionMenu === refer.email ? null : refer.email)
                                     }}
                                   >
                                     <FaEllipsisH />
                                   </button>
-                                  {activeActionMenu === refer.email && (
-                                    <div className="ad-action-menu" style={{ top: menuPos.top, bottom: menuPos.bottom, right: menuPos.right }}>
-                                      <button onClick={() => { setSelectedUser(refer); setShowUserDetailsModal(true); setActiveActionMenu(null) }}>
-                                        View Details
-                                      </button>
-                                      <button onClick={() => { setShowModal(true); setEmail(refer.email); setActiveActionMenu(null) }}>
-                                        Credit Account
-                                      </button>
-                                      <button onClick={() => { setDebitModal(true); setEmail(refer.email); setActiveActionMenu(null) }}>
-                                        Debit Account
-                                      </button>
-                                      <button onClick={() => { setShowUpgradeModal(true); setActiveEmail(refer.email); setActiveActionMenu(null) }}>
-                                        Upgrade User
-                                      </button>
-                                      <button onClick={() => { verifyUserPdtStatus(refer._id); setActiveActionMenu(null) }}>
-                                        {refer.verified ? 'Lock PDT' : 'Unlock PDT'}
-                                      </button>
-                                      <button onClick={() => { setActiveEmail(refer.email); setName(refer.firstname); approveWithdraw(); setActiveActionMenu(null) }}>
-                                        Approve Withdraw
-                                      </button>
-                                      <button onClick={() => { approveKYC(refer); setActiveActionMenu(null) }}>
-                                        Approve KYC
-                                      </button>
-                                      <button className="ad-menu-danger" onClick={() => { rejectKYC(refer.email); setActiveActionMenu(null) }}>
-                                        Reject KYC
-                                      </button>
-                                      <div className="ad-menu-divider" />
-                                      <a href={`mailto:${refer.email}`} className="ad-menu-link">
-                                        Send Email
-                                      </a>
-                                      <button className="ad-menu-danger" onClick={() => { setShowDeletModal(true); setActiveEmail(refer.email); setActiveActionMenu(null) }}>
-                                        Delete User
-                                      </button>
-                                    </div>
-                                  )}
                                 </td>
                               </tr>
                             ))}
                           </tbody>
                         </table>
+                      </div>
+
+                      {/* dropdown rendered outside scroll wrapper so it is never clipped */}
+                      {activeActionMenu && activeMenuUser && (
+                        <div
+                          className="ad-action-menu"
+                          style={{ top: menuPos.top, bottom: menuPos.bottom, right: menuPos.right }}
+                        >
+                          <button onClick={() => { setSelectedUser(activeMenuUser); setShowUserDetailsModal(true); setActiveActionMenu(null) }}>
+                            View Details
+                          </button>
+                          <button onClick={() => { setShowModal(true); setEmail(activeMenuUser.email); setActiveActionMenu(null) }}>
+                            Credit Account
+                          </button>
+                          <button onClick={() => { setDebitModal(true); setEmail(activeMenuUser.email); setActiveActionMenu(null) }}>
+                            Debit Account
+                          </button>
+                          <button onClick={() => { setShowUpgradeModal(true); setActiveEmail(activeMenuUser.email); setActiveActionMenu(null) }}>
+                            Upgrade User
+                          </button>
+                          <button onClick={() => { verifyUserPdtStatus(activeMenuUser._id); setActiveActionMenu(null) }}>
+                            {activeMenuUser.verified ? 'Lock PDT' : 'Unlock PDT'}
+                          </button>
+                          <button onClick={() => { setActiveEmail(activeMenuUser.email); setName(activeMenuUser.firstname); approveWithdraw(); setActiveActionMenu(null) }}>
+                            Approve Withdraw
+                          </button>
+                          <button onClick={() => { approveKYC(activeMenuUser); setActiveActionMenu(null) }}>
+                            Approve KYC
+                          </button>
+                          <button className="ad-menu-danger" onClick={() => { rejectKYC(activeMenuUser.email); setActiveActionMenu(null) }}>
+                            Reject KYC
+                          </button>
+                          <div className="ad-menu-divider" />
+                          <a href={`mailto:${activeMenuUser.email}`} className="ad-menu-link">
+                            Send Email
+                          </a>
+                          <button className="ad-menu-danger" onClick={() => { setShowDeletModal(true); setActiveEmail(activeMenuUser.email); setActiveActionMenu(null) }}>
+                            Delete User
+                          </button>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="ad-empty">
